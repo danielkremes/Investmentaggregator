@@ -29,6 +29,9 @@ public class User {
     @Column(name = "email_user")
     private String emailUser;
 
+    @Column(name = "password_user")
+    private String passwordUser;
+
     @CreationTimestamp
     private Instant creationTimestamp;
 
