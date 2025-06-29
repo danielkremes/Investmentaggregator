@@ -1,14 +1,11 @@
 services:
   mysql:
-    image: mysql
-    ports:
-      - "3306:3306"
-    expose:
-      - "3306"
+    container_name: 'guide-mysql'
+    image: 'mysql:latest'
     environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-    volumes:
-      - "./conf.d:/etc/mysql/conf.d:ro"
+    ports:
+      - '3306:3306'

@@ -4,7 +4,11 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.UUID;
 
 @Data
@@ -25,6 +29,9 @@ public class User {
     @Column(name = "email_user")
     private String emailUser;
 
+    @CreationTimestamp
+    private Instant creationTimestamp;
 
-
+    @UpdateTimestamp
+    private Instant updateTimestamp;
 }
